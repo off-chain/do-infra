@@ -27,6 +27,13 @@ resource "digitalocean_record" "www" {
   ttl = 3600
 }
 
+resource "digitalocean_record" "charts" {
+  domain = digitalocean_domain.main.id
+  type   = "CNAME"
+  name   = "charts"
+  value  = "off-chain.github.io."
+  ttl = 3600
+}
 
 resource "digitalocean_record" "ns1_a" {
   domain = digitalocean_domain.main.id
